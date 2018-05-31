@@ -1,4 +1,3 @@
-var events = require('./test-events');
 var input = `6
 "Booking", "last bed", 10000
 "Booking", "any bed", 8000
@@ -18,12 +17,10 @@ for (var i = 1; i < inputArray.length - 1; i++) {
     if (inputArray[i].includes(`"Booking", "last bed"`)) {
         var bookArr = inputArray[i].split(",");
         bookingPoints += .15 * parseInt(bookArr[bookArr.length - 1]);
-        events.emit('bookingHouseLastBed', bookingPoints)
     }
     if (inputArray[i].includes(`"Booking", "any bed"`)) {
         var bookArr = inputArray[i].split(",");
         bookingPoints += .10 * parseInt(bookArr[bookArr.length - 1]);
-        events.emit('bookingHouseAnyBed', bookingPoints)
     }
     if (inputArray[i].includes(`"House visit", "new lead"`)) {
         var bookArr = inputArray[i].split(",");
