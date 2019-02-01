@@ -14,8 +14,18 @@ for (let i = 0; i < d; i++) {
 
 /* Solution with array shift8*/
 for (let i = 0; i < d; i++) {
-    let first = a.shift();
-    a.push(first);
+    a.push(a.shift());
 }
+
+/* Left shift */
+for (let i = 0; i < 2; i++) {
+    a.push(a.splice(0, 1)[0]);
+}
+
+/* Right shift */
+for (let i = 0; i < d; i++) {
+    a.splice(0, 0, a.splice(-1, 1)[0]);
+}
+
 
 console.log(a);
